@@ -1,65 +1,171 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&display=swap');
+
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    border: 0;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('./IMG/heleenmirrenbg.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    
 }
+
 
 header {
-    width: 95%;
-    margin: auto;
-    position: fixed;
-    z-index: 2;
-    background: white;
+    height: 20vh;
+    background: rgba(0, 0, 0, 0.15);
 }
 
-header h1 {
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #fff;
+}
+nav h1 {
+    margin-top: 25px;
+}
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 25px;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fff;
     text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.nav-link:hover {
+    color: rgba(0, 0, 0, 0.50);
+}
+
+.headline {
+    height: 100%;
+    width: auto;
+    align-items: center;
+    justify-content: center; 
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    font-size: 25px;
+}
+
+.headline h1 {
     text-align: center;
 }
 
-main {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 10px;
-
+.topline {
+    position: relative;
+    height: 3px;
+    width: 65%;
+    background: slategrey;
 }
 
-.grid-image {
-    position: relative;
+.midline {
+    display: block;
+    position: absolute;
+    left: 37.5%;
+    top: .005px;
+    bottom: .25px;
+    height: 10px;
+    background: turquoise;
+    width: 20%;
+}
+
+.bottomline {
+    height: 3px;
+    width: 15%;
+    background: slategrey;
+}
+
+.main-grid {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax( 500px, 1fr));
+    grid-gap: 20px;
+}
+
+.card {
+    border: 10px solid white;
     display: flex;
+    width: 100%;
+    height: 400px; 
+}
+
+.card:hover {
+    border: 10px solid rgba(0, 0, 0, 0.5);
+    transition: ease-in 0.5s;
+}
+
+.card-right {
+    flex-direction: row-reverse;
+    margin: 25px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    height: 300px;
-    width: 100%;   
+    
 }
 
-.grid-image img {
-    z-index: 1;
-    height: 300px;
-    width: 100%;
+.card-right h3 {
+    text-align: center;
+    padding: 5px;
 }
 
-.grid-image h1 {
-    opacity: 0;
-    position: absolute;
-    background-color: rgba(0,0,0, 0.3);
+.card img {
+    height: 400px;
+    width: 300px;
+}
+
+.archives {
+    margin-top: 15px;
+    display: flex;
+    background: slategrey;
+    justify-content: space-around;
+    padding: 25px;
+}
+
+.archives ul {
+    list-style: none;
+}
+
+.archives a {
+    text-decoration: none;
     color: white;
-    z-index: 2;
 }
 
-.grid-image:hover h1 {
-    display: block;
-    opacity: 1;
-    transition: 0.3s ease-in;
+.archives a:hover {
+    text-decoration: underline;
+}
+
+.search {
+    height: 35px;
+    width: auto;
+    background: rgba(0, 0, 0, 0.50);
+}
+@media only screen and (max-width: 760px) {
+    .card {
+        flex-direction: column;
+        height: auto;
+        width: auto;
+        align-items: center;
+    }
 }
